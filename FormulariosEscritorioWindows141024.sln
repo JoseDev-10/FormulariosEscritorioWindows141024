@@ -5,7 +5,9 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FormulariosEscritorioWindows141024", "FormulariosEscritorioWindows141024\FormulariosEscritorioWindows141024.csproj", "{D3A8E7B5-EF37-4198-9FBB-9ACDBD7ECEDB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormEstudiantes", "FormEstudiantes\FormEstudiantes.csproj", "{1BD08B64-CBA3-4DB4-816A-B0122D6D63EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FormEstudiantes", "FormEstudiantes\FormEstudiantes.csproj", "{1BD08B64-CBA3-4DB4-816A-B0122D6D63EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormularioEstudiantes", "FormularioEstudiantes\FormularioEstudiantes.csproj", "{C06BE5DF-961D-4BBC-B92A-4D4CECDD2126}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{1BD08B64-CBA3-4DB4-816A-B0122D6D63EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BD08B64-CBA3-4DB4-816A-B0122D6D63EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BD08B64-CBA3-4DB4-816A-B0122D6D63EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C06BE5DF-961D-4BBC-B92A-4D4CECDD2126}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C06BE5DF-961D-4BBC-B92A-4D4CECDD2126}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C06BE5DF-961D-4BBC-B92A-4D4CECDD2126}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C06BE5DF-961D-4BBC-B92A-4D4CECDD2126}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

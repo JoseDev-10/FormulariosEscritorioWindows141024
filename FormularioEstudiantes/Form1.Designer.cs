@@ -40,9 +40,10 @@
             label1 = new Label();
             groupBox2 = new GroupBox();
             dgvEstudiantes = new DataGridView();
+            Id = new DataGridViewTextBoxColumn();
             Nombres = new DataGridViewTextBoxColumn();
             Apellidos = new DataGridViewTextBoxColumn();
-            FechaNacimiento = new DataGridViewTextBoxColumn();
+            FechaMatricula = new DataGridViewTextBoxColumn();
             EsBecado = new DataGridViewCheckBoxColumn();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -63,7 +64,7 @@
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(12, 25);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(553, 200);
+            groupBox1.Size = new Size(583, 200);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos del Estudiante";
@@ -77,6 +78,7 @@
             btnListar.TabIndex = 8;
             btnListar.Text = "Listar";
             btnListar.UseVisualStyleBackColor = false;
+            btnListar.Click += btnListar_Click;
             // 
             // btnAgregar
             // 
@@ -158,7 +160,7 @@
             groupBox2.Controls.Add(dgvEstudiantes);
             groupBox2.Location = new Point(17, 246);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(548, 224);
+            groupBox2.Size = new Size(578, 224);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Listado de Estudiantes";
@@ -166,33 +168,44 @@
             // dgvEstudiantes
             // 
             dgvEstudiantes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvEstudiantes.Columns.AddRange(new DataGridViewColumn[] { Nombres, Apellidos, FechaNacimiento, EsBecado });
+            dgvEstudiantes.Columns.AddRange(new DataGridViewColumn[] { Id, Nombres, Apellidos, FechaMatricula, EsBecado });
             dgvEstudiantes.Location = new Point(6, 22);
             dgvEstudiantes.Name = "dgvEstudiantes";
-            dgvEstudiantes.Size = new Size(535, 196);
+            dgvEstudiantes.Size = new Size(566, 196);
             dgvEstudiantes.TabIndex = 0;
             dgvEstudiantes.CellContentClick += dataGridView1_CellContentClick;
             // 
+            // Id
+            // 
+            Id.DataPropertyName = "IdEstudiante";
+            Id.HeaderText = "Id";
+            Id.Name = "Id";
+            Id.Width = 50;
+            // 
             // Nombres
             // 
+            Nombres.DataPropertyName = "nombres";
             Nombres.HeaderText = "Nombres";
             Nombres.Name = "Nombres";
             Nombres.Width = 150;
             // 
             // Apellidos
             // 
+            Apellidos.DataPropertyName = "apellidos";
             Apellidos.HeaderText = "Apellidos";
             Apellidos.Name = "Apellidos";
             Apellidos.Width = 150;
             // 
-            // FechaNacimiento
+            // FechaMatricula
             // 
-            FechaNacimiento.HeaderText = "FechaNacimiento";
-            FechaNacimiento.Name = "FechaNacimiento";
-            FechaNacimiento.Width = 110;
+            FechaMatricula.DataPropertyName = "fechamat";
+            FechaMatricula.HeaderText = "FechaMatricula";
+            FechaMatricula.Name = "FechaMatricula";
+            FechaMatricula.Width = 110;
             // 
             // EsBecado
             // 
+            EsBecado.DataPropertyName = "becado";
             EsBecado.HeaderText = "EsBecado";
             EsBecado.Name = "EsBecado";
             // 
@@ -200,7 +213,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(574, 482);
+            ClientSize = new Size(604, 482);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "Form1";
@@ -226,9 +239,10 @@
         private Button btnAgregar;
         private GroupBox groupBox2;
         private DataGridView dgvEstudiantes;
+        private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Nombres;
         private DataGridViewTextBoxColumn Apellidos;
-        private DataGridViewTextBoxColumn FechaNacimiento;
+        private DataGridViewTextBoxColumn FechaMatricula;
         private DataGridViewCheckBoxColumn EsBecado;
     }
 }

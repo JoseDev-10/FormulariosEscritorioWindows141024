@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             groupBox1 = new GroupBox();
+            btnContar = new Button();
             btnEliminarBinding = new Button();
             btnInsertarBinding = new Button();
             btnBinding = new Button();
@@ -48,6 +50,11 @@
             Apellidos = new DataGridViewTextBoxColumn();
             FechaMatricula = new DataGridViewTextBoxColumn();
             EsBecado = new DataGridViewCheckBoxColumn();
+            timer1 = new System.Windows.Forms.Timer(components);
+            btnIniciar = new Button();
+            btnDetener = new Button();
+            lblHora = new Label();
+            timerHora = new System.Windows.Forms.Timer(components);
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvEstudiantes).BeginInit();
@@ -56,6 +63,7 @@
             // groupBox1
             // 
             groupBox1.BackColor = SystemColors.GradientActiveCaption;
+            groupBox1.Controls.Add(btnContar);
             groupBox1.Controls.Add(btnEliminarBinding);
             groupBox1.Controls.Add(btnInsertarBinding);
             groupBox1.Controls.Add(btnBinding);
@@ -74,6 +82,17 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos del Estudiante";
+            // 
+            // btnContar
+            // 
+            btnContar.BackColor = SystemColors.GradientActiveCaption;
+            btnContar.Location = new Point(481, 125);
+            btnContar.Name = "btnContar";
+            btnContar.Size = new Size(84, 28);
+            btnContar.TabIndex = 12;
+            btnContar.Text = "Contar";
+            btnContar.UseVisualStyleBackColor = false;
+            btnContar.Click += btnContar_Click;
             // 
             // btnEliminarBinding
             // 
@@ -246,20 +265,69 @@
             EsBecado.HeaderText = "EsBecado";
             EsBecado.Name = "EsBecado";
             // 
+            // timer1
+            // 
+            timer1.Interval = 3000;
+            timer1.Tick += timer1_Tick;
+            // 
+            // btnIniciar
+            // 
+            btnIniciar.BackColor = Color.Red;
+            btnIniciar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnIniciar.Location = new Point(196, 476);
+            btnIniciar.Name = "btnIniciar";
+            btnIniciar.Size = new Size(75, 32);
+            btnIniciar.TabIndex = 2;
+            btnIniciar.Text = "Iniciar";
+            btnIniciar.UseVisualStyleBackColor = false;
+            btnIniciar.Click += btnIniciar_Click;
+            // 
+            // btnDetener
+            // 
+            btnDetener.BackColor = Color.Red;
+            btnDetener.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnDetener.Location = new Point(287, 476);
+            btnDetener.Name = "btnDetener";
+            btnDetener.Size = new Size(75, 32);
+            btnDetener.TabIndex = 3;
+            btnDetener.Text = "Detener";
+            btnDetener.UseVisualStyleBackColor = false;
+            btnDetener.Click += btnDetener_Click;
+            // 
+            // lblHora
+            // 
+            lblHora.AutoSize = true;
+            lblHora.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblHora.Location = new Point(14, 5);
+            lblHora.Name = "lblHora";
+            lblHora.Size = new Size(40, 15);
+            lblHora.TabIndex = 4;
+            lblHora.Text = "label4";
+            // 
+            // timerHora
+            // 
+            timerHora.Interval = 1000;
+            timerHora.Tick += timerHora_Tick;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(604, 482);
+            ClientSize = new Size(604, 512);
+            Controls.Add(lblHora);
+            Controls.Add(btnDetener);
+            Controls.Add(btnIniciar);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvEstudiantes).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -284,5 +352,11 @@
         private Button btnBinding;
         private Button btnEliminarBinding;
         private Button btnInsertarBinding;
+        private Button btnContar;
+        private System.Windows.Forms.Timer timer1;
+        private Button btnIniciar;
+        private Button btnDetener;
+        private Label lblHora;
+        private System.Windows.Forms.Timer timerHora;
     }
 }

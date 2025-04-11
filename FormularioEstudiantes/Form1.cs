@@ -163,7 +163,54 @@ namespace FormularioEstudiantes
         {
             //Botón eliminar Binding
             int elementofinal = estudiantesBinding.Count;
-            estudiantesBinding.RemoveAt(elementofinal -1);
+            estudiantesBinding.RemoveAt(elementofinal - 1);
+        }
+
+        private void btnContar_Click(object sender, EventArgs e)
+        {
+            //Cuenta y muestra la cantidad de elementos de la vista
+            MessageBox.Show(estudiantesBinding.Count.ToString());
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            //Se ejecuta cada cierto tiempo
+            //Cuenta y muestra la cantidad de elementos de la vista cada cierto tiempo
+            //MessageBox.Show(estudiantesBinding.Count.ToString());
+
+            //El Timer se detiene si cuenta 3 elementos
+            if (estudiantesBinding.Count == 3)
+            {
+                timer1.Stop();
+            }
+            MessageBox.Show(estudiantesBinding.Count.ToString());
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //Iniciamos el Timer
+            //timer1.Start();
+
+            //Iniciamos y mostramos la hora en el formulario
+            timerHora.Start();
+        }
+
+        private void btnIniciar_Click(object sender, EventArgs e)
+        {
+            //Iniciamos el Timer
+            timer1.Start();
+        }
+
+        private void btnDetener_Click(object sender, EventArgs e)
+        {
+            //Detenemos el timer
+            timer1.Stop();
+        }
+
+        private void timerHora_Tick(object sender, EventArgs e)
+        {
+            //Mostramos la fecha y hora en el label
+            lblHora.Text = DateTime.Now.ToLocalTime().ToString();
         }
     }
 }
